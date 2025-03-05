@@ -5,10 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Unit3
+namespace Unit9
 {
     public partial class LoginForm : Form
     {
@@ -19,6 +20,8 @@ namespace Unit3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Regex regex = new Regex(@"^[a-zA-Z0-9_]*$");
+
             if (textBox1.Text == "" && textBox2.Text == "")
             {
                 MessageBox.Show("Please enter a username and password.");
@@ -30,6 +33,10 @@ namespace Unit3
             else if (textBox2.Text == "")
             {
                 MessageBox.Show("Please enter a password.");
+            }
+            else if (!regex.IsMatch(textBox1.Text) || !regex.IsMatch(textBox2.Text))
+            {
+                MessageBox.Show("Please only utilize alphanumeric characters and underscores.");
             }
             else try
                 {

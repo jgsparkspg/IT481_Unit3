@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Unit3
+namespace Unit9
 {
     public class Business
     {
-        DataAccess database;
+        private DataAccess database;
 
         public Business(string username, string password) 
         {

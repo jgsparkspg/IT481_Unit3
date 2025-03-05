@@ -7,17 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Unit3
+namespace Unit9
 {
     internal class DataAccess
     {
-        string auth;
+        private string auth;
         public DataAccess(string connectionString)
         {
             auth = connectionString;
             Test();
         }
-
 
         public DataTable RunProcedure(string name)
         {
@@ -33,7 +32,6 @@ namespace Unit3
             }
             
         }
-
 
         private void Test()
         {
